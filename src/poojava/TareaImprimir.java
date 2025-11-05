@@ -11,12 +11,15 @@ public class TareaImprimir  implements Runnable {
 		nombreTarea = nombre;
 		tiempoInactividad = generator.nextInt(5000);
 	}
-	@Ovverride
+	@Override
 	public  void run() {
 		try {
-			System.out.print("%s va  a estar  inactivo  durante %d milisegundos .\n", 
+			System.out.printf("%s va  a estar  inactivo  durante %d milisegundos .\n", 
 			                    nombreTarea, tiempoInactividad);
 			  Thread.sleep (tiempoInactividad);
+		} catch (InterruptedException excepcion) {
+			System.out.printf("%s %s\n ", nombreTarea , "termino en forma prematura , debido a la interrupcion");
 		}
+		System.out.printf("%s termino su inactividdad\n ", nombreTarea );
 	}
 }
