@@ -1,5 +1,12 @@
 package hilos;
 
-public class Porceso1 {
+// Heredamos de la clase pade Thread
+public class Porceso1  extends Thread{
+	
+	@Override
+	public void run() {
+		
+		
+	}
 
 }
